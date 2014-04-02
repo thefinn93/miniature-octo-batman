@@ -17,7 +17,7 @@ This is my collection of powerline segments. They are broken into categories
 
 First, get the actual code:
 
-    pip install -U --user git+https://github.com/thefinn93/miniature-octo-batman
+    pip install -U --user git+https://github.com/thefinn93/minature-octo-batman
 
 then, add the segments to your theme. Edit
 `~/.config/powerline/themes/<extension>/<theme>.json` and add the segments like
