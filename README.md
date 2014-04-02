@@ -15,6 +15,8 @@ This is my collection of powerline segments. They are broken into categories
 
 ## Installation
 
+*This assumes you have [powerline](https://github.com/Lokaltog/powerline) installed*
+
 First, get the actual code:
 
     pip install -U --user git+https://github.com/thefinn93/minature-octo-batman
