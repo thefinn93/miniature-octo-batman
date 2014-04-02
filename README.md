@@ -4,8 +4,9 @@
 This is my collection of powerline segments. They are broken into categories
 (mostly by what program/protocol they track). Here is the complete list:
 
- * *cjdns*:
- ** **peers** shows the number of peers currently connected, separating
+ * **cjdns**:
+
+  * *peers* shows the number of peers currently connected, separating
    auto-discovered local ETHInterface peers and other peers into separate
    parts.
 
