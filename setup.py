@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-        name='minatureOctoBatman',
+        name='miniatureOctoBatman',
         packages=find_packages(),
-        namespace_packages=['minatureOctoBatman']
+        namespace_packages=['miniatureOctoBatman']
         )
