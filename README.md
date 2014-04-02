@@ -5,6 +5,9 @@ This is my collection of powerline segments. They are broken into categories
 (mostly by what program/protocol they track). Here is the complete list:
 
  * **cjdns**:
+  *Note that these assume you have the `cjdnsadmin` library installed. If you
+  don't, just cp `/path/to/cjdns/contrib/python/cjdnsadmin/cjdnsadmin.py` to
+  your path*
 
   * *peers* shows the number of peers currently connected, separating
    auto-discovered local ETHInterface peers and other peers into separate
