@@ -16,6 +16,14 @@ This is my collection of powerline segments. They are broken into categories
    Highlight groups: `cjdns:peers`, `cjdns:localpeers`, both fallback to
    `system_load` if not specified.
 
+ * **web** - stats from random websites.
+  *Note: Most of these require the python [requests](http://www.python-requests.org/) module.*
+
+  * *btc* shows the current price of bitcoins on the exchange of your choice
+  (currently only Bitstamp is supported).
+
+   Highlight group: `btc`
+
 ## Installation
 
 *This assumes you have [powerline](https://github.com/Lokaltog/powerline) installed*
