@@ -1,32 +1,29 @@
 #!/usr/bin/env python
-from powerline.lib.threaded import ThreadedSegment, KwThreadedSegment, with_docstring
+from powerline.lib.threaded import ThreadedSegment, with_docstring
 import requests
-
-def _btc(exchange="bitstamp", currency="USD"):
-    price = None
-    if exchange == "bitstamp":
-        ticker = requests.get("https://www.bitstamp.net/api/ticker/").json()
-        price = "$%s" % ticker['last']
-    if price is not None:
-        return price
-    else:
-        return "Unknown exchange \"%s\"" % exchange
 
 class BTCSegment(ThreadedSegment):
     interval = 300
 
-    def set_state(self, exchange="bitstamp", currency="USD"):
+    def set_state(self, exchange="bitstamp", currency="USD", **kwargs):
         self.exchange = exchange
         super(BTCSegment, self).set_state(**kwargs)
 
     def update(self, oldprice):
-        return _btc(exchange=self.exchange, currency="USD")
+        price = None
+        if self.exchange == "bitstamp":
+            ticker = requests.get("https://www.bitstamp.net/api/ticker/").json()
+            price = "$%s" % ticker['last']
+        if price is not None:
+            return price
+        else:
+            return "Unknown exchange \"%s\"" % exchange
 
     def render(self, price, **kwargs):
-        return {
+        return [{
             "contents": str(price),
             "hightlight_group": ["btc", "system_load"]
-            }
+            }]
 
 btc = with_docstring(BTCSegment(),
 """Returns the current price of Bitcoin at the specified exchage
