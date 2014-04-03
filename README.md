@@ -4,7 +4,8 @@
 This is my collection of powerline segments. They are broken into categories
 (mostly by what program/protocol they track). Here is the complete list:
 
- * **cjdns**:
+ * **cjdns**: stats relating to [cjdns](https://github.com/cjdelisle/cjdns).
+
   *Note that these assume you have the `cjdnsadmin` library installed. If you
   don't, just cp `/path/to/cjdns/contrib/python/cjdnsadmin/cjdnsadmin.py` to
   your path*
@@ -17,6 +18,7 @@ This is my collection of powerline segments. They are broken into categories
    `system_load` if not specified.
 
  * **web**: stats from random websites.
+
   *Note: Most of these require the python [requests](http://www.python-requests.org/) module.*
 
   * *btc* shows the current price of bitcoins on the exchange of your choice
@@ -30,6 +32,8 @@ This is my collection of powerline segments. They are broken into categories
   * *AptUpgrades* shows the number of packages that can be upgraded. It takes
     a little longer to run than I'd like, and doesn't change all that often, so
     it's threaded and runs every 5 minutes.
+
+    Highlight group: `packages:upgrades`
 
 ## Installation
 
