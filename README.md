@@ -14,8 +14,7 @@ This is my collection of powerline segments. They are broken into categories
    auto-discovered local ETHInterface peers and other peers into separate
    parts.
 
-   Highlight groups: `cjdns:peers`, `cjdns:localpeers`, both fallback to
-   `system_load` if not specified.
+   Highlight groups: `cjdns:peers`, `cjdns:localpeers`.
 
   * *nodes* shows the total number of know nodes in the routing table.
 
@@ -57,13 +56,14 @@ this (this only does the `cjdns.peers` segment, add more as needed):
     "name": "peers"
 }
 ```
-Finally, define some colors (the defaults I picked are really pretty terrible,
-feel free to suggest better ones). In
+Finally, define some colors. In
 `~/.config/powerline/colorschemes/<extension>/<theme>.json`, define colors for
 the various segments. Each segment has the colorgroups used listed, here is an
 example for cjdns peers:
 
 ```json
-"cjdns:peers": { "fg": "gray8", "bg": "gray1" },
-"cjdns:localpeers": { "fg": "gray8", "bg": "gray2" }
+{
+    "cjdns:peers": { "fg": "gray8", "bg": "gray1" },
+    "cjdns:localpeers": { "fg": "gray8", "bg": "gray2" }
+}
 ```

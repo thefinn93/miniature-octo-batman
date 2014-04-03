@@ -27,13 +27,13 @@ def peers(pl):
     out = [
             {
                 "contents": str(peercount),
-                "highlight_group": ["cjdns:peers", "system_load"]
+                "highlight_group": ["cjdns:peers"]
             }
         ]
     if localpeers > 0:
         out.append({
             "contents": str(localpeers),
-            "highlight_group": ["cjdns:localpeers", "system_load"]
+            "highlight_group": ["cjdns:localpeers"]
             })
     return out
 

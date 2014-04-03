@@ -22,7 +22,7 @@ class BTCSegment(ThreadedSegment):
     def render(self, price, **kwargs):
         return [{
             "contents": str(price),
-            "hightlight_group": ["btc", "system_load"]
+            "hightlight_group": ["btc"]
             }]
 
 btc = with_docstring(BTCSegment(),

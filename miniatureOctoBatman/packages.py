@@ -20,7 +20,7 @@ class AptUpgradesSegment(ThreadedSegment):
         if upgrades > 0:
             return [{
                 "contents": "%i packages can be upgraded" % upgrades,
-                "highlight_groups": ["packages:upgrades", "packages", "system_load"]
+                "highlight_groups": ["packages:upgrades", "packages"]
                 }]
         else:
             return None
