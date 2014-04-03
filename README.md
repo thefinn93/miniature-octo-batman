@@ -16,13 +16,20 @@ This is my collection of powerline segments. They are broken into categories
    Highlight groups: `cjdns:peers`, `cjdns:localpeers`, both fallback to
    `system_load` if not specified.
 
- * **web** - stats from random websites.
+ * **web**: stats from random websites.
   *Note: Most of these require the python [requests](http://www.python-requests.org/) module.*
 
   * *btc* shows the current price of bitcoins on the exchange of your choice
   (currently only Bitstamp is supported).
 
    Highlight group: `btc`
+
+ * **packages**: Mostly because if I called it *apt* it would break imports.
+  Maybe I'll extend it to yum or whatever some day...
+
+  * *AptUpgrades* shows the number of packages that can be upgraded. It takes
+    a little longer to run than I'd like, and doesn't change all that often, so
+    it's threaded and runs every 5 minutes.
 
 ## Installation
 
