@@ -37,5 +37,30 @@ def peers(pl):
             })
     return out
 
+def nodes(pl):
+    try:
+        cjdns = cjdnsadmin.connectWithAdminInfo()
+    except:
+        return None
+
+    more = True
+    page = 0
+    routes = 0
+    nodes = []
+    while more:
+        table = cjdns.NodeStore_dumpTable(page)
+        more = "more" in table
+        routes += len(table['routingTable'])
+        for route in table['routingTable']:
+            if not route['ip'] in nodes:
+                nodes.append(route['ip'])
+        page += 1
+    return [{
+        "contents": str(len(nodes)),
+        "highlight_group": ["cjdns:nodes"]
+        }]
+
 if __name__ == "__main__":
+    print "Hint: If you see this message and you don't know why, try reading the included README.md file"
     print peers(None)
+    print nodes(None)

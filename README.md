@@ -17,6 +17,10 @@ This is my collection of powerline segments. They are broken into categories
    Highlight groups: `cjdns:peers`, `cjdns:localpeers`, both fallback to
    `system_load` if not specified.
 
+  * *nodes* shows the total number of know nodes in the routing table.
+
+   Highlight groups: `cjdns:nodes`
+
  * **web**: stats from random websites.
 
   *Note: Most of these require the python [requests](http://www.python-requests.org/) module.*
