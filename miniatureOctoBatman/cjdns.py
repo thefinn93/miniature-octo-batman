@@ -70,6 +70,6 @@ nodes = with_docstring(NodesSegment(),
         """Displays the number of nodes in the cjdns routing table""")
 
 if __name__ == "__main__":
-    print "Hint: If you see this message and you don't know why, try reading the included README.md file"
-    print peers(None)
-    print nodes(None)
+    print("Hint: If you see this message and you don't know why, try reading the included README.md file")
+    print(peers(None))
+    print(nodes(None))
