@@ -5,7 +5,7 @@ import requests
 class BTCSegment(ThreadedSegment):
     interval = 300
 
-    def set_state(self, exchange="bitstamp", currency="USD", **kwargs):
+    def set_state(self, exchange="bitstamp", **kwargs):
         self.exchange = exchange
         super(BTCSegment, self).set_state(**kwargs)
 
@@ -17,7 +17,7 @@ class BTCSegment(ThreadedSegment):
         if price is not None:
             return price
         else:
-            return "Unknown exchange \"%s\"" % exchange
+            return "Unknown exchange \"%s\"" % self.exchange
 
     def render(self, price, **kwargs):
         return [{
@@ -32,8 +32,5 @@ btc = with_docstring(BTCSegment(),
 
     * bitstamp (supported currencies: USD)
 
-:param str currency:
-    The currency being exchanged to. See above for available currencies for
-    your exchange.
 highlight groups: ``btc``
-""")
+    """)
