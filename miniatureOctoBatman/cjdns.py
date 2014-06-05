@@ -6,7 +6,7 @@ def peers(pl):
     """Returns the current number of peers connected"""
     try:
         cjdns = cjdnsadmin.connectWithAdminInfo()
-    except:
+    except ImportError:
         return None
     peercount = 0
     localpeers = 0
@@ -25,12 +25,10 @@ def peers(pl):
                         peercount += 1
                 else:
                     peercount += 1
-    out = [
-            {
-                "contents": str(peercount),
-                "highlight_group": ["cjdns:peers"]
-            }
-        ]
+    out = [{
+            "contents": str(peercount),
+            "highlight_group": ["cjdns:peers"]
+        }]
     if localpeers > 0:
         out.append({
             "contents": str(localpeers),
@@ -44,7 +42,7 @@ class NodesSegment(ThreadedSegment):
     def update(self, oldnodes):
         try:
             cjdns = cjdnsadmin.connectWithAdminInfo()
-        except:
+        except ImportError:
             return None
 
         more = True
