@@ -26,4 +26,4 @@ class AptUpgradesSegment(ThreadedSegment):
             return None
 
 AptUpgrades = with_docstring(AptUpgradesSegment(),
-        """Displays the number of upgradable packages""")
+    """Displays the number of upgradable packages""")

@@ -25,10 +25,12 @@ def peers(pl):
                         peercount += 1
                 else:
                     peercount += 1
-    out = [{
+    out = [
+        {
             "contents": str(peercount),
             "highlight_group": ["cjdns:peers"]
-        }]
+        }
+    ]
     if localpeers > 0:
         out.append({
             "contents": str(localpeers),
@@ -64,10 +66,12 @@ class NodesSegment(ThreadedSegment):
             "contents": str(len(nodes)),
             "highlight_group": ["cjdns:nodes"]
             }]
-nodes = with_docstring(NodesSegment(),
-        """Displays the number of nodes in the cjdns routing table""")
+nodes = with_docstring(
+    NodesSegment(),
+    """Displays the number of nodes in the cjdns routing table""")
 
 if __name__ == "__main__":
-    print("Hint: If you see this message and you don't know why, try reading the included README.md file")
-    print(peers(None))
-    print(nodes(None))
+    print """Hint: If you see this message and you don't know why, \
+     try reading the included README.md file"""
+    print peers(None)
+    print nodes(None)
