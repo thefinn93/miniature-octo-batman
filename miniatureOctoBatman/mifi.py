@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-from powerline.lib.threaded import ThreadedSegment, with_docstring
 import requests
 
 statusURL = "http://att.mifiliberate/cgi/sysser.cgi?id=system_service&as=1&api=status"
