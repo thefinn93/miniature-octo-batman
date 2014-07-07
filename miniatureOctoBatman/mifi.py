@@ -3,27 +3,38 @@ from powerline.lib.threaded import ThreadedSegment, with_docstring
 import requests
 
 statusURL = "http://att.mifiliberate/cgi/sysser.cgi?id=system_service&as=1&api=status"
+timeout = 0.8
 
 def network(pl):
     """Returns the name of the carrier"""
-    status = requests.get(statusURL).json()
-    return [{
-        "contents": status['statusBarNetwork'],
-        "highlight_group": ["mifi:network"]
-    }]
+    try:
+        status = requests.get(statusURL, timeout=timeout).json()
+        return [{
+            "contents": status['statusBarNetwork'],
+            "highlight_group": ["mifi:network"]
+        }]
+    except requests.exceptions.RequestException:
+        return None
 
 def connectionType(pl):
     """Displays the technology used to connect, ie. EDGE, 3G, HSPA(+), LTE"""
-    status = requests.get(statusURL).json()
-    return [{
-        "contents": status['statusBarTechnology'].split(" ")[0],
-        "highlight_group": ["mifi:connectionType"]
-    }]
+    try:
+        status = requests.get(statusURL, timeout=timeout).json()
+        return [{
+            "contents": status['statusBarTechnology'].split(" ")[0],
+            "highlight_group": ["mifi:connectionType"]
+        }]
+    except requests.exceptions.RequestException:
+        return None
+
 
 def GPS(pl):
     """Displays the status of the GPS. ie. Off, Searching, GotFix"""
-    status = requests.get(statusURL).json()
-    return [{
-        "contents": status['statusBarGpsStatus'].split(" ")[0],
-        "highlight_group": ["mifi:GPS"]
-    }]
+    try:
+        status = requests.get(statusURL, timeout=timeout).json()
+        return [{
+            "contents": status['statusBarGpsStatus'].split(" ")[0],
+            "highlight_group": ["mifi:GPS"]
+        }]
+    except requests.exceptions.RequestException:
+        return None
