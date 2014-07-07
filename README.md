@@ -38,6 +38,26 @@ This is my collection of powerline segments. They are broken into categories
 
     Highlight group: `packages:upgrades`
 
+ * **mifi**: I added this while on a long ride with an AT&T MiFi Liberate. It
+    pulls the current status off of the device via the http api. Note that the
+    URL to pull this (mostly the hostname) may need to be changed, and is
+    defined at the top. Eventually I'd like to look into a more proper
+    preferences solution, but that's what I've got right now. So far only the
+    following can be rendered:
+
+  * *network*: displays the name of the carrier.
+
+   Highlight group: `mifi:network`
+
+  * *connectionType*: Displays the technology used to connect, such as LTE,
+    HSPA, or EDGE.
+
+   Highlight group: `mifi:connectionType`
+
+  * *GPS*: Displays the status of the GPS, ie. Off, searching, gotfix.
+
+   Highlight group: `mifi:GPS`
+
 ## Installation
 
 *This assumes you have [powerline](https://github.com/Lokaltog/powerline) installed*
