@@ -4,7 +4,7 @@ import requests
 statusURL = "http://att.mifiliberate/cgi/sysser.cgi?id=system_service&as=1&api=status"
 timeout = 0.8
 
-def network(pl):
+def network(**args):
     """Returns the name of the carrier"""
     try:
         status = requests.get(statusURL, timeout=timeout).json()
@@ -15,7 +15,7 @@ def network(pl):
     except requests.exceptions.RequestException:
         return None
 
-def connectionType(pl):
+def connectionType(**args):
     """Displays the technology used to connect, ie. EDGE, 3G, HSPA(+), LTE"""
     try:
         status = requests.get(statusURL, timeout=timeout).json()
@@ -27,7 +27,7 @@ def connectionType(pl):
         return None
 
 
-def GPS(pl):
+def GPS(**args):
     """Displays the status of the GPS. ie. Off, Searching, GotFix"""
     try:
         status = requests.get(statusURL, timeout=timeout).json()
