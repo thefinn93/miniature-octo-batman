@@ -72,8 +72,7 @@ this (this only does the `cjdns.peers` segment, add more as needed):
 
 ```json
 {
-    "module": "miniatureOctoBatman.cjdns",
-    "name": "peers"
+    "function": "miniatureOctoBatman.cjdns.peers"
 }
 ```
 Finally, define some colors. In
