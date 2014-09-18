@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-from powerline.lib.threaded import ThreadedSegment, with_docstring
+from powerline.lib.threaded import ThreadedSegment
+from powerline.segments import with_docstring
 import cjdnsadmin
 
 def peers(pl):
